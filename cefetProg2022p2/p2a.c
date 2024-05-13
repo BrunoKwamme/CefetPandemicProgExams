@@ -17,3 +17,34 @@ int main(){
     printf("%li\n", resp);
     return 0;
 }
+
+
+#include<unistd.h>
+
+void putchar(char c)
+{
+    write(1, &c, 1)
+}
+
+void    put_nmbr(int x)
+{
+
+
+    if (x < 0)
+    {
+        x = x * -1;
+        write(1, "-", 1);
+    }
+    if (x > 9)
+    {
+        put_nmbr(x / 10);
+        put_nmbr(x % 10);
+    }
+    else
+        putchar(x+48);
+
+
+}
+
+int main()
+{}
